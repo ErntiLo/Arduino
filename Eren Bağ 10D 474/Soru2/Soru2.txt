@@ -1,0 +1,36 @@
+#include <Servo.h>
+Servo servom;
+int but1=2;
+int but2=3;
+
+void setup()
+{
+  pinMode(but1,INPUT);
+    pinMode(but2,INPUT);
+  servom.attach(13);
+}
+
+void loop()
+{   
+  if(digitalRead(but1)==1)
+  {
+   
+    servom.write(180);
+    delay(10);
+    servom.write(0);       
+  }
+  else if(digitalRead(but2)==1)
+  {
+    bas1:
+    servom.write(0);   
+    servom.write(180);
+    delay(10);
+    servom.write(0);
+    goto bas1 ;   
+  }
+  
+    else 
+  {
+   servom.write(0); 
+  }
+}
